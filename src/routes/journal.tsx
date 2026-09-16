@@ -1,0 +1,9 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PageIntro } from "@/components/site-shell";
+import { journalEntries } from "@/lib/studio-data";
+
+export const Route = createFileRoute("/journal")({ head: () => ({ meta: [
+  { title: "Journal — Atelier Verve" }, { name: "description", content: "Observations from Atelier Verve on daylight, restraint, stone and how rooms age." }, { property: "og:title", content: "Journal — Atelier Verve" }, { property: "og:description", content: "Notes from site visits, material studies and rooms in use." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
+] }), component: JournalPage });
+
+function JournalPage(){return <><PageIntro eyebrow="Journal · Field notes" title={<>Looking closely<br/><span className="italic text-primary">at rooms.</span></>}>Short essays from site visits and material tables: what afternoon light changes, why some details age with dignity, and when absence becomes useful.</PageIntro><section className="px-5 pb-28 sm:px-10 lg:px-12"><div className="mx-auto max-w-7xl border-t border-border">{journalEntries.map((entry,index)=><article key={entry.title} className="grid gap-6 border-b border-border py-10 md:grid-cols-12 md:items-start"><p className="text-label text-primary md:col-span-2">0{index+1}</p><div className="md:col-span-6"><h2 className="font-display text-3xl font-light sm:text-4xl">{entry.title}</h2><p className="mt-5 max-w-2xl text-sm leading-7 text-muted-foreground">{entry.excerpt}</p></div><div className="text-label text-muted-foreground md:col-span-4 md:text-right"><p>{entry.date}</p><p className="mt-2">{entry.read}</p></div></article>)}</div></section></>}

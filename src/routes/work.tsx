@@ -1,0 +1,10 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PageIntro } from "@/components/site-shell";
+import { projects } from "@/lib/studio-data";
+
+export const Route = createFileRoute("/work")({ head: () => ({ meta: [
+  { title: "Selected Work — Atelier Verve" }, { name: "description", content: "Five interior projects shaped by site, material and the rituals of daily life." },
+  { property: "og:title", content: "Selected Work — Atelier Verve" }, { property: "og:description", content: "Residential and hospitality interiors with a precise material point of view." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
+] }), component: WorkPage });
+
+function WorkPage() { return <><PageIntro eyebrow="Selected work · 2023—2026" title={<>Five studies<br/><span className="italic text-primary">in atmosphere.</span></>}>These are not rooms built around a look. Each began with a physical condition—a harsh western sun, a narrow plan, an inherited material—and found its form by answering it.</PageIntro><section className="px-5 pb-28 sm:px-10 lg:px-12"><div className="mx-auto max-w-7xl space-y-24">{projects.map((project,index)=><article key={project.name} className="grid gap-8 lg:grid-cols-12 lg:items-end"><div className={`${index%2 ? "lg:order-2 lg:col-span-7" : "lg:col-span-8"} overflow-hidden bg-muted`}><img src={project.image} alt={`${project.name}, ${project.category}`} width={index===0?1440:index===1?1008:index===2?912:816} height={index===0?912:index===1?1264:index===2?1200:816} loading="lazy" className={`${project.shape==="tall"?"aspect-[4/5]":"aspect-[4/3]"} w-full object-cover`}/></div><div className={`${index%2 ? "lg:order-1 lg:col-span-5" : "lg:col-span-4"}`}><p className="text-label text-primary">0{index+1} · {project.category}</p><h2 className="mt-4 font-display text-4xl font-light sm:text-5xl">{project.name}</h2><p className="mt-6 text-sm leading-7 text-muted-foreground">{project.story}</p></div></article>)}</div></section></>; }
