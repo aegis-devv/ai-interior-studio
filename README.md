@@ -1,26 +1,25 @@
-# AI Interior Dreams
+# Atelier Verve — Interior Architecture Studio
 
-https://www.growthtraildesigns.com/  ==========> make a website lie this !! same to saem but differnet test but more uniqeu and more eye cathcy and mobile responsive totally !! and make it sure its too good !! its for interrios design use modern design and modern era it hsoudl be feel liek made by AI toatl crazy things
+Architectural interiors shaped through light, honest materials and disciplined restraint.
 
-This project was built with [Lovable](https://lovable.dev).
+## Tech Stack
 
-**Live app**: https://ai-interior-studio.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/b25ee24c-ffcb-4815-a04d-ae4a0bac8da0).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+- **Framework**: TanStack Start (React 19 + Vite)
+- **Routing**: TanStack Router (File-based routing)
+- **Styling**: Tailwind CSS v4 + tw-animate-css
+- **UI Components**: Radix UI + Lucide React
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Install dependencies and start the development server:
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+bun install
+bun run dev
+```
+
+To build for production:
+
+```sh
+bun run build
 ```
