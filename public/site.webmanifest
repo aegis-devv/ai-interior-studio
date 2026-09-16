@@ -1,0 +1,19 @@
+{
+  "name": "Atelier Verve — Interior Studio",
+  "short_name": "Atelier Verve",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#181615",
+  "background_color": "#181615",
+  "display": "standalone"
+}
